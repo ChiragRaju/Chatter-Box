@@ -6,10 +6,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
-// import { ChatState } from "../../Context/ChatProvider";
+import { ChatState } from "../../Context/ChatProvider";
 
 const Login = () => {
-  const [user,setUser]=useState();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
@@ -18,7 +17,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const history = useHistory();
-  // const { setUser } = ChatState();
+  const { setUser } = ChatState();
 
   const submitHandler = async () => {
     setLoading(true);
